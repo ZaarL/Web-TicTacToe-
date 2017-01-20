@@ -25,6 +25,10 @@ var painted;
             location.reload();
         }
 
+        function helpClicked(){
+            
+        }
+
         //Game methods
         function canvasClicked(canvasNumber){
             theCanvas = "canvas"+canvasNumber;
@@ -59,7 +63,6 @@ var painted;
                     alert("THE GAME IS OVER!");
                     location.reload(true);
                 }
-            
             }
             else{
                 alert("THAT SPACE IS ALREADY OCCUPIED.");
