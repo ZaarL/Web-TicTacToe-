@@ -10,8 +10,7 @@ var painted;
         var y;
 
         //Instanciate Arrays
-        window.onload=function(){
-            
+        window.onload = function(){
             painted = new Array();
             content = new Array();
             winningCombinations = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
@@ -20,6 +19,10 @@ var painted;
             painted[l] = false;
             content[l]='';
             }
+        }  
+
+        function restartClicked(){
+            location.reload();
         }
 
         //Game methods
@@ -59,7 +62,7 @@ var painted;
             
             }
             else{
-                alert("THAT SPACE IS ALREADY OCCUPIED WITH YOUR HEART!");
+                alert("THAT SPACE IS ALREADY OCCUPIED.");
             }
         }
 
@@ -76,8 +79,5 @@ var painted;
             y=confirm("PLAY AGAIN?");
             if(y==true){
                 location.reload(true);
-            }
-            else{
-                alert("SO LONG,SUCKER!");
             }
         }
