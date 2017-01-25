@@ -1,41 +1,26 @@
 body{
-
 	text-align:center;
-	
 }
 
-.box{
-
-	text-align:left;
-	width:auto;
-	height:auto;
-	
+.square-box{
+    position: relative;
+    width: 100;
+    overflow: hidden;
 }
-
-h3{
-
-	position:relative;
-	-webkit-animation:h3Animation 5s; 
-	
+.square-box:before{
+    content: "";
+    display: block;
+    padding-top: 100%;
 }
-
-h1{
-
-	position:relative;
-	-webkit-animation:h1Animation 5s; 
-	
+.square-content{
+    position:  absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
-
-h2{
-
-	position:relative;
-	-webkit-animation:h2Animation 5s; 
-	
-}
-
-canvas{
-
-	position:relative;
-	-webkit-animation:canvasAnimation 5s; 
-	
+.square-content div {
+   display: table;
+   width: 100%;
+   height: 100%;
 }
