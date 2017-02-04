@@ -3,12 +3,9 @@
 
 <head>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
     <meta charset="UTF-8">
     <title>Tic-Tac-Toe</title>
@@ -17,92 +14,98 @@
 </head>
 
 <body>
-    <h1>Tic-Tac-Toe</h1>
-    <i class="fa fa-th" style="font-size:48px;color:red"></i>
-<div class="container">
-    <div class="row">
-        <div class="col-xs-4" >
-            <div class='square-box'style="border:2px solid black">
-                <div class='square-content'><div><canvas id="canvas1" onclick="canvasClicked(1)"></canvas></div></div>
+    <center>
+        <h1>Tic-Tac-Toe</h1>
+    </center>
+    <div class="container-fluid">
+        <div class="col-lg-2 col-sm-4 col-xs-12">
+            <button type="button" style="width:100%;" class="btn btn-lg btn-default pull-right" onclick="restartClicked()">Restart</button>
+            <button type="button" style="width:100%;" class=" btn btn-lg btn-info " data-toggle="modal" data-target="#helpModal">Help</button>
+            <div id="helpModal" class="modal fade" role="dialog">
+                <div class="modal-dialog ">
+                    <div class="modal-content ">
+                        <div class="modal-header ">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title ">Help</h4>
+                        </div>
+                        <div class="modal-body ">
+                            <p>Tic-tac-toe (also known as noughts and crosses or Xs and Os) is a paper-and-pencil game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a
+                                horizontal, vertical, or diagonal row wins the game.
+                                <br> <a href="https://en.wikipedia.org/wiki/Tic-tac-toe ">Wikipedia</a></p>
+                        </div>
+                    </div>
+                </div>
             </div>
-</div>
-<div class="col-xs-4">
-<div class='square-box' style="border:2px solid black">
-        <div class='square-content'><div><canvas id="canvas2" onclick="canvasClicked(2)"></canvas></div></div>
-    </div>
-</div>
-<div class="col-xs-4">
-    <div class='square-box' style="border:2px solid black">
-        <div class='square-content'><div><canvas id="canvas3" onclick="canvasClicked(3)"></canvas></div></div>
-    </div>
-</div>
-</div>
-<div class="row">
-    <div class="col-xs-4">
-        <div class='square-box' style="border:2px solid black">
-        <div class='square-content'><div><canvas id="canvas4" onclick="canvasClicked(4)"></canvas></div></div>
-    </div>
-</div>
-<div class="col-xs-4">
-    <div class='square-box' style="border:2px solid black">
-        <div class='square-content'><div><canvas id="canvas5" onclick="canvasClicked(5)"></canvas></div></div>
-    </div>
-</div>
-<div class="col-xs-4">
-    <div class='square-box' style="border:2px solid black">
-        <div class='square-content'><div><canvas id="canvas6" onclick="canvasClicked(6)"></canvas></div></div>
-    </div>
-</div>
-</div>
-<div class="row">
-    <div class="col-xs-4">
-        <div class='square-box' style="border:2px solid black">
-        <div class='square-content'><div><canvas id="canvas7" onclick="canvasClicked(7)"></canvas></div></div>
-    </div>
-</div>
-<div class="col-xs-4">
-    <div class='square-box' style="border:2px solid black">
-        <div class='square-content'><div><canvas id="canvas8" onclick="canvasClicked(8)"></canvas></div></div>
-    </div>
-</div>
-<div class="col-xs-4">
-    <div class='square-box' style="border:2px solid black">
-        <div class='square-content'><div><canvas id="canvas9" onclick="canvasClicked(9)"></canvas></div></div>
-    </div>
-</div>
-</div>
-<div class="row">
-    <div class="col">
-        <button type="button" class="btn btn-lg btn-default" onclick="restartClicked()">Restart</button>
-<button type="button" class="btn btn-lg btn-info" data-toggle="modal" data-target="#helpModal" onclick="helpClicked()">Help</button>
+        </div>
+        <div class="col-lg-10 col-sm-8 col-xs-12 ">
+            <div class="row top-buffer">
+                <div class="col-xs-3 col-xs-offset-1 bg-info">
+                    <div class="dummy"></div>
+                    <div class="in">
+                        <div><canvas id="canvas1" onclick="canvasClicked(1)"></canvas></div>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-xs-offset-1 bg-success">
+                    <div class="dummy"></div>
+                    <div class="in">
+                        <div><canvas id="canvas2" onclick="canvasClicked(2)"></canvas></div>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-xs-offset-1 bg-warning">
+                    <div class="dummy"></div>
 
-<div id="helpModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Tic-Tac-Toe: Help</h4>
+                    <div class="in">
+                        <div><canvas id="canvas3" onclick="canvasClicked(3)"></canvas></div>
+                    </div>
+                </div>
             </div>
-            <div class="modal-body">
-                <p>Tic-tac-toe (also known as noughts and crosses or Xs and Os) is a paper-and-pencil game for two players,
-                    X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of
-                    their marks in a horizontal, vertical, or diagonal row wins the game.
-                    <br> <a href="https://en.wikipedia.org/wiki/Tic-tac-toe">Wikipedia</a></p>
+            <div class="row top-buffer">
+                <div class="col-xs-3 col-xs-offset-1 bg-info">
+                    <div class="dummy"></div>
+                    <div class="in">
+                        <div><canvas id="canvas4" onclick="canvasClicked(4)"></canvas></div>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-xs-offset-1 bg-success">
+                    <div class="dummy"></div>
+                    <div class="in">
+                        <div><canvas id="canvas5" onclick="canvasClicked(5)"></canvas></div>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-xs-offset-1 bg-warning">
+                    <div class="dummy"></div>
+                    <div class="in">
+                        <div><canvas id="canvas6" onclick="canvasClicked(6)"></canvas></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row top-buffer">
+                <div class="col-xs-3 col-xs-offset-1 bg-info">
+                    <div class="dummy"></div>
+                    <div class="in">
+                        <div><canvas id="canvas7" onclick="canvasClicked(7)"></canvas></div>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-xs-offset-1 bg-success">
+                    <div class="dummy"></div>
+                    <div class="in">
+                        <div><canvas id="canvas8" onclick="canvasClicked(8)"></canvas></div>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-xs-offset-1 bg-warning">
+                    <div class="dummy"></div>
+                    <div class="in">
+                        <div><canvas id="canvas9" onclick="canvasClicked(9)"></canvas></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-</div>
-</div>
-</div>
 
-<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js " integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin=" anonymous "></script>
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-    crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js " integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa " crossorigin="anonymous "></script>
 </body>
 
 </html>
